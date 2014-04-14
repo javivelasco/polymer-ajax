@@ -9,7 +9,7 @@ license that can be found in the LICENSE file.
  */
 /**
  * polymer-xhr can be used to perform XMLHttpRequests.
- 
+
  * Example:
  *
  *     <polymer-xhr id="xhr"></polymer-xhr>
@@ -85,7 +85,7 @@ license that can be found in the LICENSE file.
         }
         this.makeReadyStateHandler(xhr, options.callback);
         this.setRequestHeaders(xhr, options.headers);
-        xhr.send(method == 'POST' ? (options.body || params) : null);
+        xhr.send(method == 'POST' || method == 'PUT' || method == 'PATCH' ? (options.body || params) : null);
         if (!async) {
           xhr.onreadystatechange(xhr);
         }
